@@ -1,11 +1,136 @@
-Hello {{ title }}
-{{isDisabled}}
-<button type="button" [disabled]="isDisabled" (click)="onButtonClick()">Button</button>
-<img [src]="theImage" alt="an image">
+<!-- Hello {{ title }}
+<button 
+  type="button" 
+  [disabled]="isDisabled" 
+  (click)="onCounter('+')"
+>
+Increase
+</button>
+<button 
+  type="button" 
+  [disabled]="isDisabled" 
+  (click)="onCounter('-')"
+>
+Decrease
+</button>
+
+{{counter}}
+
+<input 
+  [(ngModel)]="inputText" 
+  type="text" 
+  placeholder="Enter Text"
+>
+
+{{inputText}}
+
+<div 
+  [ngClass]="classes"
+  [ngStyle]="{
+    'background-color': bgColor,
+  }"
+>
+  {{message}}
+</div> -->
+
+<!-- <img [src]="theImage" alt="an image">
 
 <div [style.backgroundColor]="bgColor">
   <h2 [style.color]="titleColor">Title</h2>
   <p [style]="description">Description</p>
 </div>
 
-<h2 [class.textColor]="redText == 'abcd'">Title</h2>
+<h2 [class.textColor]="redText == 'abcd'">Title</h2> -->
+
+
+<!-- Directives -->
+
+<!-- <p *ngIf="isLoggedin; else loggedOut">Welcome {{ title }}</p>
+
+<ng-template #loggedOut>Please Login</ng-template>
+
+<ul>
+  <li *ngFor="let user of users; let i = index">{{ i + 1 }} {{ user }}</li>
+</ul> -->
+
+<!-- 
+<div [ngSwitch]="grade" class="mt-8">
+  <p *ngSwitchCase="'A'">Excellent</p>
+  <p *ngSwitchCase="'B'">Good</p>
+  <p *ngSwitchCase="'C'">Bad</p>
+  <p *ngSwitchDefault>Unkown</p>
+</div>
+
+
+@if (a > b) {
+  {{a}} is greater than {{b}}
+} @else {
+  No
+}
+
+@for (user of usersObj; track $index) {
+  {{ user['id'].toString() }}
+  {{$index}}
+} -->
+
+<!-- @switch (grade) {
+  @case ('A') {
+    <p>Excellent</p>
+  } @case ('B') {
+    <p>Good</p>
+  } @case ('C') {
+    <p>Bad</p>
+  } @default {
+    <p>Unkown</p>
+  }
+} -->
+<!-- <div>
+  <h1>{{ title | uppercase }}</h1>
+  <h1>{{ today | date }}</h1>
+  <h1>{{ today | date : 'fullDate' }}</h1>
+  <h1>{{ today | date : 'fullDate' | uppercase }}</h1>
+  <h1>{{ today | date : 'short' }}</h1>
+  <h1>{{ today | date : 'medium' }}</h1>
+  <h1>{{ today | date : 'long' }}</h1>
+  <h1>{{ today | date : 'full' }}</h1>
+  <h1>{{ today | date : 'dd/mm/yy' }}</h1>
+</div> -->
+
+<!-- <div>
+  <p>{{ currency | currency : 'EUR' : 'symbol' : '1.1-6' }}</p>
+  <p>{{ currency | percent : '1.156156156' }}</p>
+</div>
+
+
+<p>{{ title | append: " Test" | uppercase }}</p> -->
+
+<!-- {{ data }}
+<p *ngIf="!isLoading">Loading</p>
+@for(todo of todos; track $index){
+  <p>
+    {{ todo.id }}
+    {{ todo.title }}
+  </p>
+} -->
+
+<!-- 
+<div *ngIf="user | async as user">
+  {{ user.name }}
+  {{ user.email }}
+</div> -->
+Total {{ total() }}
+
+<input 
+  type="text"
+  [value]="newTodoText()"
+  (input)="onInputTextChanged($event)" 
+  placeholder="Add your todo"
+>
+<button (click)="onInsertTodo()">Add Todo</button>
+
+@for (todo of todos(); track $index) {
+  <p>
+    {{ todo.description }}
+  </p>
+  <button (click)="onDeleteTodo(todo.id)">Delete</button>
+}
